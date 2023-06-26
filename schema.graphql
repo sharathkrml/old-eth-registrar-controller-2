@@ -1,6 +1,42 @@
-type ExampleEntity @entity {
-  id: ID!
-  count: BigInt!
-  name: String! # string
-  label: Bytes! # bytes32
+type OwnershipTransferred @entity {
+    id: ID!
+    index: BigInt!
+    hash: Bytes!
+
+    previousOwner: Bytes!
+    newOwner: Bytes!
+}
+
+type NewPriceOracle @entity {
+    id: ID!
+    index: BigInt!
+    hash: Bytes!
+
+    oracle: Bytes!
+}
+type NameRenewed @entity {
+    id: ID!
+    index: BigInt!
+    hash: Bytes!
+
+    name: String!
+    label: Bytes!
+    cost: BigInt!
+    expires: BigInt!
+}
+type NameRegistered @entity {
+    id: ID!
+    index: BigInt!
+    hash: Bytes!
+
+    name: String!
+    label: Bytes!
+    owner: Bytes!
+    cost: BigInt!
+    expires: BigInt!
+}
+
+type Counter @entity {
+    id: ID!
+    count: BigInt!
 }
